@@ -83,20 +83,39 @@ VAF <- ggplot(endometrial_order, aes(x= reorder(Cell_Line, -AUC), y= ...8)) +
 ##Generate second VAF heatmap solely for cell line labels, as combining caused labels to disappear in original
 VAF2 <- ggplot(endometrial_order, aes(x= reorder(Cell_Line, -AUC), y= ...8)) + 
   geom_tile(aes(fill= VAF)) + scale_fill_manual(values= c("blue", "green", "red")) + theme_classic() + theme(axis.title.y = element_blank(), axis.text.y= element_blank(), axis.title.x= element_blank(), axis.ticks.y = element_blank()) +
-  theme(axis.text.x = element_text(angle= 90, size= 12, face= "bold", hjust= 0.5, vjust= 0.5)) + theme(axis.line.x = element_blank(), axis.line.y = element_blank()) + theme(legend.position = "none") + theme(plot.margin = unit(c(0,0,0,2), "mm"))
+  theme(axis.text.x = element_text(angle= 45, size= 12, face= "bold", hjust= 1, vjust= 0.9)) + theme(axis.line.x = element_blank(), axis.line.y = element_blank()) + theme(legend.position = "none") + theme(plot.margin = unit(c(0,0,0,2), "mm"))
 
 ##Mutation heatmap with colorblind friendly colors
 Mutation <- ggplot(endometrial_order, aes(x= reorder(Cell_Line, -AUC), y= ...9)) + 
-  geom_tile(aes(fill= Mutation_Type)) + scale_fill_manual(values= c("#2c7bb6", "#fdae61", "#d7191c")) + theme_classic() + theme(axis.title.y = element_blank(), axis.title.x= element_blank(), axis.ticks.y = element_blank(), axis.text.x = element_blank(), axis.ticks.x = element_blank()) +
+  geom_tile(aes(fill= Mutation_Type)) + scale_fill_manual(values= c("#2c7bb6", "#fdae61", "green4")) + theme_classic() + theme(axis.title.y = element_blank(), axis.title.x= element_blank(), axis.ticks.y = element_blank(), axis.text.x = element_blank(), axis.ticks.x = element_blank()) +
   theme(axis.line.x = element_blank(), axis.line.y = element_blank()) + theme(axis.text.y= element_text(size= 16, face= "bold"), legend.title = element_blank(), legend.direction = "horizontal", legend.text = element_text(size= 16)) + theme(plot.margin = unit(c(0,0,0,2), "mm"))
 
 ##Combine all graphs and save as jpeg file
 jpeg("Cell line heatmap, AUC vs Mutation vs VAF.jpeg", width= 1200, units= "px", res= 120)
 grid.newpage()
 print(VAF, vp = viewport(x = 0.4875, y = 0.63, width = 0.836, height = 0.12))
-print(VAF2, vp = viewport(x = 0.376, y = 0.46, width = 0.52, height = 0.12))
+print(VAF2, vp = viewport(x = 0.38, y = 0.48, width = 0.525, height = 0.12))
 print(AUC, vp = viewport(x = 0.43, y = 0.89, width = 0.73, height = 0.12))
 print(Mutation, vp = viewport(x = 0.495, y = 0.76, width = 0.947, height = 0.12))
 
 dev.off()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
