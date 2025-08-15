@@ -8,6 +8,8 @@ Aaron Petty
 #### Read in csv file with tumor growth data and calculate tumor volume metrics
 
 ``` r
+library(invivoSyn)
+library(tidyverse)
 tv <- read_tv("JHUEM2, AMG + RT, D17-26.csv")
 ```
 
