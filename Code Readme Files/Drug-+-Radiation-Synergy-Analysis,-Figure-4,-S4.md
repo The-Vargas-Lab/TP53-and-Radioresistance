@@ -204,37 +204,37 @@ AMG_1B_Surf <- fitSurface(AMG_1B, AMG_1B_Marg, null_model = "loewe", B.CP = 50, 
 isobologram(Nutlin_JH_Surf)
 ```
 
-![](Figs/isobol-1.pdf)<!-- -->
+![](Figs/isobol-1.png)<!-- -->
 
 ``` r
 isobologram(Nutlin_108_Surf)
 ```
 
-![](Figs/isobol-2.pdf)<!-- -->
+![](Figs/isobol-2.png)<!-- -->
 
 ``` r
 isobologram(Nutlin_1B_Surf)
 ```
 
-![](Figs/isobol-3.pdf)<!-- -->
+![](Figs/isobol-3.png)<!-- -->
 
 ``` r
 isobologram(AMG_JH_Surf)
 ```
 
-![](Figs/isobol-4.pdf)<!-- -->
+![](Figs/isobol-4.png)<!-- -->
 
 ``` r
 isobologram(AMG_108_Surf)
 ```
 
-![](Figs/isobol-5.pdf)<!-- -->
+![](Figs/isobol-5.png)<!-- -->
 
 ``` r
 isobologram(AMG_1B_Surf)
 ```
 
-![](Figs/isobol-6.pdf)<!-- -->
+![](Figs/isobol-6.png)<!-- -->
 
 #### Generate contour plots of synergy scores using contour function in BIGL and save as pdfs
 
@@ -242,37 +242,37 @@ isobologram(AMG_1B_Surf)
 contour(Nutlin_JH_Surf, main= paste0("Contour Plot for ", cell_lines[1], " MaxR"))
 ```
 
-![](Figs/contour-1.pdf)<!-- -->
+![](Figs/contour-1.png)<!-- -->
 
 ``` r
 contour(Nutlin_108_Surf, main= paste0("Contour Plot for ", cell_lines[2], " MaxR"))
 ```
 
-![](Figs/contour-2.pdf)<!-- -->
+![](Figs/contour-2.png)<!-- -->
 
 ``` r
 contour(Nutlin_1B_Surf, main= paste0("Contour Plot for ", cell_lines[3], " MaxR"))
 ```
 
-![](Figs/contour-3.pdf)<!-- -->
+![](Figs/contour-3.png)<!-- -->
 
 ``` r
 contour(AMG_JH_Surf, main= paste0("Contour Plot for ", cell_lines[1], " MaxR"))
 ```
 
-![](Figs/contour-4.pdf)<!-- -->
+![](Figs/contour-4.png)<!-- -->
 
 ``` r
 contour(AMG_108_Surf, main= paste0("Contour Plot for ", cell_lines[2], " MaxR"))
 ```
 
-![](Figs/contour-5.pdf)<!-- -->
+![](Figs/contour-5.png)<!-- -->
 
 ``` r
 contour(AMG_1B_Surf, main= paste0("Contour Plot for ", cell_lines[3], " MaxR"))
 ```
 
-![](Figs/contour-6.pdf)<!-- -->
+![](Figs/contour-6.png)<!-- -->
 
 ------------------------------------------------------------------------
 
