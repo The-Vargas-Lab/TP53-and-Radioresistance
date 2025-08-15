@@ -5,7 +5,7 @@ Aaron Petty
 
 ### *Data prep for synergy analyses*
 
-#### Load libraries
+#### Load packages
 
 ``` r
 library("reshape2")
@@ -273,5 +273,7 @@ contour(AMG_1B_Surf, main= paste0("Contour Plot for ", cell_lines[3], " MaxR"))
 ```
 
 ![](Drug-+-Radiation-Synergy-Analysis,-Figure-4,-S4_files/figure-gfm/contour-6.pdf)<!-- -->
+
+------------------------------------------------------------------------
 
 #### **Built with Version 4.4.3**
