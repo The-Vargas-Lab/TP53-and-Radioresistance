@@ -141,7 +141,7 @@ AMG_1B$d2 <- as.numeric(AMG_1B$d2)
 
 
 ##Synergy analysis with BIGL
-###Fit marginal dose response curves to data using fitMarginal function in BIGL
+###Fit individual dose response curves to data using fitMarginal function in BIGL
 Nutlin_JH_Marg <- fitMarginals(Nutlin_JH, method= "nlslm", names= c(Drug_1, "Radiation"))
 Nutlin_108_Marg <- fitMarginals(Nutlin_108, method= "nlslm", names= c(Drug_1, "Radiation"))
 Nutlin_1B_Marg <- fitMarginals(Nutlin_1B, method= "nlslm", names= c(Drug_1, "Radiation"))
