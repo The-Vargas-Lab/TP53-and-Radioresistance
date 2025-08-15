@@ -28,7 +28,7 @@ p <- p + labs(y= expression(bold(paste("Tumor Volume (", mm^3, ")"))))
 print(p)
 ```
 
-<img src="InvivoSyn-analysis,-JHUEM2-AMG+RT,-Figure-5,-S6_files/figure-gfm/boxplots-1.png" width="70%" />
+<img src="Figs/boxplots-1.png" width="70%" />
 
 #### Generate density plot for HSA Synergy Scores with Day 9 TGI (Figure 5C)
 
@@ -48,7 +48,7 @@ p1 <- p1 + xlab("HSA Synergy Score") + theme_Publication()
 print(p1)
 ```
 
-<img src="InvivoSyn-analysis,-JHUEM2-AMG+RT,-Figure-5,-S6_files/figure-gfm/HSAdensity-1.png" width="70%" />
+<img src="Figs/HSAdensity-1.png" width="70%" />
 
 #### Generate dot plot for bootstrap analysis on Day 9 TGI using HSA model (Supplemental Figure 6)
 
@@ -56,7 +56,7 @@ print(p1)
 HSA_Synergy <- TGI_synergy(TGI_lst, method = "HSA")
 ```
 
-<img src="InvivoSyn-analysis,-JHUEM2-AMG+RT,-Figure-5,-S6_files/figure-gfm/HSA-1.png" width="70%" />
+<img src="Figs/HSA-1.png" width="70%" />
 
 #### Generate density plot for Bliss Synergy Scores with Day 9 TGI (Figure 5C)
 
@@ -87,7 +87,7 @@ dev.off()
 Bliss_Synergy <- TGI_synergy(TGI_lst, method = "Bliss")
 ```
 
-<img src="InvivoSyn-analysis,-JHUEM2-AMG+RT,-Figure-5,-S6_files/figure-gfm/Bliss-1.png" width="70%" />
+<img src="Figs/Bliss-1.png" width="70%" />
 
 ### *HSA AUC Synergy density plots (Figure 5D)*
 
