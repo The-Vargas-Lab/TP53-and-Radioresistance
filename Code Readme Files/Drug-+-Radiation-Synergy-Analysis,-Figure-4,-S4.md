@@ -5,6 +5,15 @@ Aaron Petty
 
 ### *Data prep for synergy analyses*
 
+#### Load libraries
+
+``` r
+library("reshape2")
+library("readxl")
+library("tidyverse")
+library("BIGL")
+```
+
 #### Make list of sheetnames from Excel file and loop through to create single dataframe for each sheet
 
 ``` r
@@ -192,57 +201,77 @@ AMG_1B_Surf <- fitSurface(AMG_1B, AMG_1B_Marg, null_model = "loewe", B.CP = 50, 
 #### Generate isobolograms of predicted surfaces using isobologram function in BIGL and save as pdfs
 
 ``` r
-pdf(paste0(cell_lines[1], " + ", Drug_1, ", HSA.pdf"), width= 8.00, height= 5.00)
 isobologram(Nutlin_JH_Surf)
-dev.off()
-
-pdf(paste0(cell_lines[2], " + ", Drug_1, ", HSA.pdf"), width= 8.00, height= 5.00)
-isobologram(Nutlin_108_Surf)
-dev.off()
-
-pdf(paste0(cell_lines[3], " + ", Drug_1, ", HSA.pdf"), width= 8.00, height= 5.00)
-isobologram(Nutlin_1B_Surf)
-dev.off()
-
-pdf(paste0(cell_lines[1], " + ", Drug_2, ", HSA.pdf"), width= 8.00, height= 5.00)
-isobologram(AMG_JH_Surf)
-dev.off()
-
-pdf(paste0(cell_lines[2], " + ", Drug_2, ", HSA.pdf"), width= 8.00, height= 5.00)
-isobologram(AMG_108_Surf)
-dev.off()
-
-pdf(paste0(cell_lines[3], " + ", Drug_2, ", HSA.pdf"), width= 8.00, height= 5.00)
-isobologram(AMG_1B_Surf)
-dev.off()
 ```
+
+![](Drug-+-Radiation-Synergy-Analysis,-Figure-4,-S4_files/figure-gfm/isobol-1.pdf)<!-- -->
+
+``` r
+isobologram(Nutlin_108_Surf)
+```
+
+![](Drug-+-Radiation-Synergy-Analysis,-Figure-4,-S4_files/figure-gfm/isobol-2.pdf)<!-- -->
+
+``` r
+isobologram(Nutlin_1B_Surf)
+```
+
+![](Drug-+-Radiation-Synergy-Analysis,-Figure-4,-S4_files/figure-gfm/isobol-3.pdf)<!-- -->
+
+``` r
+isobologram(AMG_JH_Surf)
+```
+
+![](Drug-+-Radiation-Synergy-Analysis,-Figure-4,-S4_files/figure-gfm/isobol-4.pdf)<!-- -->
+
+``` r
+isobologram(AMG_108_Surf)
+```
+
+![](Drug-+-Radiation-Synergy-Analysis,-Figure-4,-S4_files/figure-gfm/isobol-5.pdf)<!-- -->
+
+``` r
+isobologram(AMG_1B_Surf)
+```
+
+![](Drug-+-Radiation-Synergy-Analysis,-Figure-4,-S4_files/figure-gfm/isobol-6.pdf)<!-- -->
 
 #### Generate contour plots of synergy scores using contour function in BIGL and save as pdfs
 
 ``` r
-pdf(paste0(cell_lines[1], " + ", Drug_1, " contour, HSA.pdf"), width= 8.00, height= 5.00)
 contour(Nutlin_JH_Surf, main= paste0("Contour Plot for ", cell_lines[1], " MaxR"))
-dev.off()
-
-pdf(paste0(cell_lines[2], " + ", Drug_1, " contour, HSA.pdf"), width= 8.00, height= 5.00)
-contour(Nutlin_108_Surf, main= paste0("Contour Plot for ", cell_lines[2], " MaxR"))
-dev.off()
-
-pdf(paste0(cell_lines[3], " + ", Drug_1, " contour, HSA.pdf"), width= 8.00, height= 5.00)
-contour(Nutlin_1B_Surf, main= paste0("Contour Plot for ", cell_lines[3], " MaxR"))
-dev.off()
-
-pdf(paste0(cell_lines[1], " + ", Drug_2, " contour, HSA.pdf"), width= 8.00, height= 5.00)
-contour(AMG_JH_Surf, main= paste0("Contour Plot for ", cell_lines[1], " MaxR"))
-dev.off()
-
-pdf(paste0(cell_lines[2], " + ", Drug_2, " contour, HSA.pdf"), width= 8.00, height= 5.00)
-contour(AMG_108_Surf, main= paste0("Contour Plot for ", cell_lines[2], " MaxR"))
-dev.off()
-
-pdf(paste0(cell_lines[3], " + ", Drug_2, " contour, HSA.pdf"), width= 8.00, height= 5.00)
-contour(AMG_1B_Surf, main= paste0("Contour Plot for ", cell_lines[3], " MaxR"))
-dev.off()
 ```
 
-### **Built with Version 4.4.3**
+![](Drug-+-Radiation-Synergy-Analysis,-Figure-4,-S4_files/figure-gfm/contour-1.pdf)<!-- -->
+
+``` r
+contour(Nutlin_108_Surf, main= paste0("Contour Plot for ", cell_lines[2], " MaxR"))
+```
+
+![](Drug-+-Radiation-Synergy-Analysis,-Figure-4,-S4_files/figure-gfm/contour-2.pdf)<!-- -->
+
+``` r
+contour(Nutlin_1B_Surf, main= paste0("Contour Plot for ", cell_lines[3], " MaxR"))
+```
+
+![](Drug-+-Radiation-Synergy-Analysis,-Figure-4,-S4_files/figure-gfm/contour-3.pdf)<!-- -->
+
+``` r
+contour(AMG_JH_Surf, main= paste0("Contour Plot for ", cell_lines[1], " MaxR"))
+```
+
+![](Drug-+-Radiation-Synergy-Analysis,-Figure-4,-S4_files/figure-gfm/contour-4.pdf)<!-- -->
+
+``` r
+contour(AMG_108_Surf, main= paste0("Contour Plot for ", cell_lines[2], " MaxR"))
+```
+
+![](Drug-+-Radiation-Synergy-Analysis,-Figure-4,-S4_files/figure-gfm/contour-5.pdf)<!-- -->
+
+``` r
+contour(AMG_1B_Surf, main= paste0("Contour Plot for ", cell_lines[3], " MaxR"))
+```
+
+![](Drug-+-Radiation-Synergy-Analysis,-Figure-4,-S4_files/figure-gfm/contour-6.pdf)<!-- -->
+
+#### **Built with Version 4.4.3**
