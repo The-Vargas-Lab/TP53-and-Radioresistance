@@ -75,13 +75,10 @@ pval=round(1-sum(bsTGI_all$Combo>bsTGI_all$expected_TGI)/nrow(bsTGI_all),4)
 p2= plot_density(bsTGI_all, sel_var = "Synergy_score", pval= pval)
 p2 <- p2 + xlab("Bliss Synergy Score") + theme_Publication()
 
-png("Day 9 Bliss TGI Density.png", width= 1200, height= 720, units= "px", res= 150)
 print(p2)
-dev.off()
 ```
 
-    ## quartz_off_screen 
-    ##                 2
+<img src="Figs/Blissdensity-1.png" width="70%" />
 
 #### Generate dot plot for bootstrap analysis on Day 9 TGI using Bliss model (Supplemental Figure 6)
 
@@ -99,6 +96,14 @@ AUC_lst <- get_mAUCr(tv_AUC)
 AUC_Synergy <- AUC_synergy(AUC_lst, t= 12, method= "HSA")
 ```
 
-### Code utilized the *invivoSyn* package installed from the following address: <https://github.com/maobinchen/invivoSyn>
+<img src="Figs/AUC-1.png" width="70%" />
 
-### **Built with Version 4.4.3**
+------------------------------------------------------------------------
+
+#### Code utilized the *invivoSyn* package installed from the following address: <https://github.com/maobinchen/invivoSyn>
+
+- Mao, B. & Guo, S. Statistical Assessment of Drug Synergy from In Vivo
+  Combination Studies Using Mouse Tumor Models. Cancer Res. Commun. 3,
+  2146–2157 (2023).
+
+#### **Built with Version 4.4.3**
