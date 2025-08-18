@@ -24,11 +24,12 @@ print(p)
 dev.off()
 
 ##Generate tumor growth plots (Supplementary Figure 5)
-p2=tv %>% ggplot()+aes(Day,TV,group=Mouse,color=Group) + labs(y= expression(bold(paste("Tumor Volume (", mm^3, ")"))))+geom_point()+geom_line()+
+p1=tv %>% ggplot()+aes(Day,TV,group=Mouse,color=Group) + labs(y= expression(bold(paste("Tumor Volume (", mm^3, ")"))))+geom_point()+geom_line()+
   theme_Publication()+facet_wrap(~Treatment)+
   ggsci::scale_color_jco() + theme(axis.title.x=element_text(face = "bold",size = rel(1.6)),axis.text=element_text(size=rel(1.8)),axis.ticks=element_line(size=rel(5)))+
   theme(legend.position = 'none')
 ggsave("Tumor growth curve_AMGRT.png",width=10,height=8,dpi=300)
+
 
 ##Generate density plot for HSA Synergy Scores with Day 9 TGI (Figure 5C)
 TGI_lst <- getTGI(tv, sel_day = 9)
@@ -40,11 +41,11 @@ bsTGI_all = bsTGI_all %>% mutate(Synergy_score=Combo-expected_TGI)
 bsTGI_all = bsTGI_all*100 #in percentage
 pval=round(1-sum(bsTGI_all$Combo>bsTGI_all$expected_TGI)/nrow(bsTGI_all),4)
 
-p1= plot_density(bsTGI_all, sel_var = "Synergy_score", pval= pval)
-p1 <- p1 + xlab("HSA Synergy Score") + theme_Publication()
+p2= plot_density(bsTGI_all, sel_var = "Synergy_score", pval= pval)
+p2 <- p2 + xlab("HSA Synergy Score") + theme_Publication()
 
 png("Day 9 HSA TGI Density.png", width= 1200, height= 720, units= "px", res= 150)
-print(p1)
+print(p2)
 dev.off()
 
 ##Generate dot plot for bootstrap analysis on Day 9 TGI using HSA model (Supplementary Figure 6)
@@ -61,13 +62,12 @@ bsTGI_all = bsTGI_all %>% mutate(Synergy_score=Combo-expected_TGI)
 bsTGI_all = bsTGI_all*100 #in percentage
 pval=round(1-sum(bsTGI_all$Combo>bsTGI_all$expected_TGI)/nrow(bsTGI_all),4)
 
-p2= plot_density(bsTGI_all, sel_var = "Synergy_score", pval= pval)
-p2 <- p2 + xlab("Bliss Synergy Score") + theme_Publication()
+p3= plot_density(bsTGI_all, sel_var = "Synergy_score", pval= pval)
+p3 <- p3 + xlab("Bliss Synergy Score") + theme_Publication()
 
 png("Day 9 Bliss TGI Density.png", width= 1200, height= 720, units= "px", res= 150)
-print(p2)
+print(p3)
 dev.off()
-
 
 ##Generate dot plot for bootstrap analysis on Day 9 TGI using Bliss model (Supplemental Figure 6)
 Bliss_Synergy <- TGI_synergy(TGI_lst, method = "Bliss")
