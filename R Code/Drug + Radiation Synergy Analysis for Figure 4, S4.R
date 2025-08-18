@@ -1,4 +1,4 @@
-#Load necessary libraries
+#Load necessary packages
 library("reshape2")
 library("readxl")
 library("tidyverse")
