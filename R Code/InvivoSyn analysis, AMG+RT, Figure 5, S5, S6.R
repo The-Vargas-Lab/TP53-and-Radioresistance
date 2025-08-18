@@ -69,7 +69,7 @@ png("Day 9 Bliss TGI Density.png", width= 1200, height= 720, units= "px", res= 1
 print(p3)
 dev.off()
 
-##Generate dot plot for bootstrap analysis on Day 9 TGI using Bliss model (Supplemental Figure 6)
+##Generate dot plot for bootstrap analysis on Day 9 TGI using Bliss model (Supplementary Figure 6)
 Bliss_Synergy <- TGI_synergy(TGI_lst, method = "Bliss")
 
 
