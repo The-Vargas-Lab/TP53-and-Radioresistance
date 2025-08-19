@@ -2,7 +2,7 @@
 library(invivoSyn)
 library(tidyverse)
 
-#Plots and synergy analyses for TGI data
+#Boxplots and tumor growth curves for tumor growth data
 
 ##Read in csv file with tumor growth data 
 tv <- read_tv("JHUEM2, AMG + RT, D17-26.csv")
@@ -30,6 +30,7 @@ p1=tv %>% ggplot()+aes(Day,TV,group=Mouse,color=Group) + labs(y= expression(bold
   theme(legend.position = 'none')
 ggsave("Tumor growth curve_AMGRT.png",width=10,height=8,dpi=300)
 
+#Synergy analyses with Tumor Growth Inhibition (TGI) data
 
 ##Generate density plot for HSA Synergy Scores with Day 9 TGI (Figure 5C)
 TGI_lst <- getTGI(tv, sel_day = 9)
