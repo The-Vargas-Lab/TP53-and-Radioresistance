@@ -8,28 +8,28 @@ Aaron Petty
 #### Read in excel file with JHUEM1 and JHUEM2 variant AUC data in long format
 
 ``` r
-JHLog <- read_xlsx("JHUEM1, 2 NTC + variants, Log2 AUC data, 11-30-21.xlsx", 2)
+AUC <- read_xlsx("JHUEM1, 2 NTC + variants, Log2 AUC data, 11-30-21.xlsx", 2)
 ```
 
 #### Delete Cell Line column and rename new first column
 
 ``` r
-JHLog <- JHLog[,-1]
-names(JHLog)[1] <- "KO"
+AUC <- AUC[,-1]
+names(AUC)[1] <- "KO"
 ```
 
 #### Pivot table to long form and convert KO column to factor
 
 ``` r
-JHLog <- melt(JHLog, id= c("KO"))
-JHLog$KO <- factor(JHLog$KO, levels= c("NTC", "KO 5.1", "KO 6.1"), 
+AUC <- melt(AUC, id= c("KO"))
+AUC$KO <- factor(AUC$KO, levels= c("NTC", "KO 5.1", "KO 6.1"), 
                    labels= c("Control", "5.1", "6.1"))
 ```
 
 #### Generate boxplot and beeswarm plot
 
 ``` r
-JSw <- ggplot(JHLog, aes(x= KO, y= value)) + 
+JSw <- ggplot(AUC, aes(x= KO, y= value)) + 
   theme_classic() + scale_y_continuous(limits= c(0, 5), breaks= seq(0, 5, 1)) +
   scale_x_discrete(expand= expansion(mult= c(0.25, 1))) + labs(title= NULL, x= NULL, y= "Radiation Response (Mean AUC)") +
   theme(axis.text.y= element_text(face= "bold", size= 16), axis.title.y= element_text(size= 18, face= "bold"), axis.text.x = element_text(face = "bold", size= 14)) +
