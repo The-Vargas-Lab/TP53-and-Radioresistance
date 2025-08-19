@@ -169,6 +169,8 @@ AMG_108$d2 <- as.numeric(AMG_108$d2)
 AMG_1B$d2 <- as.numeric(AMG_1B$d2)
 ```
 
+------------------------------------------------------------------------
+
 ### *Synergy analysis with BIGL*
 
 #### Fit individual dose response curves to data using fitMarginal function in BIGL
