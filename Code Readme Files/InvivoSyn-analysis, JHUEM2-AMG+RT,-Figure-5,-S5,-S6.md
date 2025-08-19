@@ -46,7 +46,7 @@ print(p1)
 
 ------------------------------------------------------------------------
 
-### Synergy analyses with Tumor Growth Inhibition (TGI) data
+### *Synergy analyses with Tumor Growth Inhibition (TGI) data*
 
 #### Generate density plot for HSA Synergy Scores with Day 9 TGI (Figure 5C)
 
